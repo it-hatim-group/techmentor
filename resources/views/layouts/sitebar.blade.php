@@ -91,6 +91,28 @@
             </li>
         @endcanany
 
+        {{-- Contacts --}}
+        @canany(['Contacts'])
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon">
+                        <i class="fadeIn animated bx bx-message-rounded-detail"></i>
+                    </div>
+                    <div class="menu-title">Contacts</div>
+                </a>
+                <ul>
+                    @can('Contacts')
+                        <li>
+                            <a href="{{ route('contact.index') }}">
+                                <i class="bx bx-radio-circle"></i>
+                                Contact List
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcanany
+
         {{-- User Management --}}
         @canany(['Permissions View', 'Roles View', 'Users View'])
             <li>

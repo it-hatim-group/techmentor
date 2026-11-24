@@ -1,17 +1,3 @@
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul class="mb-0">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <div class="modal-backdrop" id="organizationRegistrationModal" role="dialog" aria-modal="true"
     aria-labelledby="organizationTitle" onclick="backdropClose(event)">
     <div class="reg-modal">

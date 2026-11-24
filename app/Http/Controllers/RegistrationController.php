@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Mentee;
 use App\Models\Mentor;
 use App\Models\Organization;
@@ -63,6 +64,23 @@ class RegistrationController extends Controller
         return redirect()->back()->with(
             'success',
             'Your organization registration has been submitted successfully!'
+        );
+    }
+
+    public function contact(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'interest' => 'required|string|max:255',
+            'message' => 'nullable|string|max:5000',
+        ]);
+
+        Contact::create($validated);
+
+        return redirect()->back()->with(
+            'success',
+            'Thank you! Your enquiry has been submitted successfully.'
         );
     }
 }

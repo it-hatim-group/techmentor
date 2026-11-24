@@ -11,6 +11,7 @@ use App\Http\Controllers\MentorController;
 use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 // Public route
@@ -18,6 +19,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::post('/register/mentor', [RegistrationController::class, 'mentor'])->name('register.mentor');
 Route::post('/register/mentee', [RegistrationController::class, 'mentee'])->name('register.mentee');
 Route::post('/register/organization', [RegistrationController::class, 'organization'])->name('register.organization');
+Route::post('/contact/store', [RegistrationController::class, 'contact'])->name('contact.store');
 
 Route::get('/login', function () {
     return view('auth.login');
@@ -40,6 +42,10 @@ Route::middleware('auth')->group(function () {
     // Organization
     Route::get('/organizations', [OrganizationController::class, 'index'])->middleware('permission:Organizations')->name('organization.index');
     Route::delete('/organizations/{id}', [OrganizationController::class, 'destroy'])->name('organizations.destroy');
+
+    // Contact Controller 
+    Route::get('/contacts', [ContactController::class, 'index'])->middleware('permission:Contacts')->name('contact.index');
+    Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->middleware('permission:Contacts')->name('contacts.destroy');
 
     // Roles
     Route::get('/roles', [RoleController::class, 'index'])->middleware('permission:Roles View')->name('roles.index');
