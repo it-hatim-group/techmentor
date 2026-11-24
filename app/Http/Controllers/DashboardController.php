@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
@@ -21,6 +22,7 @@ class DashboardController extends Controller
         $numberOfOrganizations = Organization::count();
         $numberOfMentors = Mentor::count();
         $numberOfMentees = Mentee::count();
+        $numberOfContacts = Contact::count();
 
         return view('dashboard', compact(
             'numberOfPermissions',
@@ -28,7 +30,8 @@ class DashboardController extends Controller
             'numberOfUsers',
             'numberOfOrganizations',
             'numberOfMentors',
-            'numberOfMentees'
+            'numberOfMentees',
+            'numberOfContacts',
         ));
     }
 }

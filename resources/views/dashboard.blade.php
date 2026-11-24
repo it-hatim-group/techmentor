@@ -227,6 +227,17 @@
                 </div>
             </a>
         </div>
+        {{-- Total Contacts --}}
+        <div class="col">
+            <a href="{{ route('contact.index') }}" class="card dashboard-card contacts-card">
+                <div class="card-body">
+                    <p class="card-label">Total Contacts</p>
+                    <h2>{{ number_format($numberOfContacts) }}</h2>
+                    <span class="card-link">View Contacts <i class="bx bx-right-arrow-alt"></i></span>
+                    <i class="bx bx-user card-icon" aria-hidden="true"></i>
+                </div>
+            </a>
+        </div>
         {{-- Total Users --}}
         <div class="col">
             <a href="{{ route('users.index') }}" class="card dashboard-card users-card">
