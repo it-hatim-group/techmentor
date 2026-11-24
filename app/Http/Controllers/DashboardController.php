@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Organization;
 use App\Models\Mentor;
 use App\Models\Mentee;
+use App\Models\ProcessStep;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -23,6 +24,7 @@ class DashboardController extends Controller
         $numberOfMentors = Mentor::count();
         $numberOfMentees = Mentee::count();
         $numberOfContacts = Contact::count();
+        $numberOfProcessSteps = ProcessStep::count();
 
         return view('dashboard', compact(
             'numberOfPermissions',
@@ -32,6 +34,7 @@ class DashboardController extends Controller
             'numberOfMentors',
             'numberOfMentees',
             'numberOfContacts',
+            'numberOfProcessSteps',
         ));
     }
 }

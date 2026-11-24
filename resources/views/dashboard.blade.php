@@ -223,10 +223,20 @@
         <div class="col">
             <a href="{{ route('contact.index') }}" class="card dashboard-card contacts-card">
                 <div class="card-body">
-                    <p class="card-label">Total Contacts</p>
+                    <p class="card-label">Total Contact Messages</p>
                     <h2>{{ number_format($numberOfContacts) }}</h2>
-                    <span class="card-link">View Contacts <i class="bx bx-right-arrow-alt"></i></span>
-                    <i class="bx bx-user card-icon" aria-hidden="true"></i>
+                    <span class="card-link">View Messages <i class="bx bx-right-arrow-alt"></i></span>
+                    <i class="bx bx-message-dots card-icon" aria-hidden="true"></i>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="{{ route('processSteps.index') }}" class="card dashboard-card contacts-card">
+                <div class="card-body">
+                    <p class="card-label">Total Process Steps</p>
+                    <h2>{{ number_format($numberOfProcessSteps) }}</h2>
+                    <span class="card-link">View Process Steps <i class="bx bx-right-arrow-alt"></i></span>
+                    <i class="bx bx-list-check card-icon" aria-hidden="true"></i>
                 </div>
             </a>
         </div>
