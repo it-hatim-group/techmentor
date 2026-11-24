@@ -2,7 +2,6 @@
 @section('content')
     <style>
         .dashboard-header {
-            margin-top: -15px;
             margin-bottom: 22px;
         }
 
@@ -84,7 +83,6 @@
             transform: translateY(-50%) scale(1.1);
         }
 
-        /* Individual card colors */
         .users-card {
             border-left: 4px solid #4d8bff !important;
         }
@@ -180,7 +178,6 @@
             }
         }
     </style>
-    {{-- Dashboard Header --}}
     <div class="dashboard-header">
         <h4>Welcome to Your Dashboard</h4>
         <p class="mb-0">
@@ -188,13 +185,11 @@
         </p>
     </div>
     <hr>
-    {{-- Dashboard Statistics --}}
     <div class="dashboard-section-title">
         <i class="bx bx-bar-chart-alt-2 me-1"></i>
         System Overview
     </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
-        {{-- Total Mentors --}}
         <div class="col">
             <a href="{{ route('mentor.index') }}" class="card dashboard-card mentors-card">
                 <div class="card-body">
@@ -205,7 +200,6 @@
                 </div>
             </a>
         </div>
-        {{-- Total Mentees --}}
         <div class="col">
             <a href="{{ route('mentee.index') }}" class="card dashboard-card mentees-card">
                 <div class="card-body">
@@ -216,7 +210,6 @@
                 </div>
             </a>
         </div>
-        {{-- Total Organizations --}}
         <div class="col">
             <a href="{{ route('organization.index') }}" class="card dashboard-card organizations-card">
                 <div class="card-body">
@@ -227,7 +220,6 @@
                 </div>
             </a>
         </div>
-        {{-- Total Contacts --}}
         <div class="col">
             <a href="{{ route('contact.index') }}" class="card dashboard-card contacts-card">
                 <div class="card-body">
@@ -238,7 +230,6 @@
                 </div>
             </a>
         </div>
-        {{-- Total Users --}}
         <div class="col">
             <a href="{{ route('users.index') }}" class="card dashboard-card users-card">
                 <div class="card-body">
@@ -249,7 +240,6 @@
                 </div>
             </a>
         </div>
-        {{-- Total Roles --}}
         <div class="col">
             <a href="{{ route('roles.index') }}" class="card dashboard-card roles-card">
                 <div class="card-body">
@@ -260,7 +250,6 @@
                 </div>
             </a>
         </div>
-        {{-- Total Permissions --}}
         <div class="col">
             <a href="{{ route('permissions.index') }}" class="card dashboard-card permissions-card">
                 <div class="card-body">

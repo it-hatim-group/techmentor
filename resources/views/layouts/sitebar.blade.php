@@ -91,6 +91,28 @@
             </li>
         @endcanany
 
+        {{-- Steps --}}
+        @canany(['Steps'])
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon">
+                        <i class="fadeIn animated bx bx-list-ol"></i>
+                    </div>
+                    <div class="menu-title">Steps</div>
+                </a>
+                <ul>
+                    @can('Steps')
+                        <li>
+                            <a href="{{ route('processSteps.index') }}">
+                                <i class="bx bx-radio-circle"></i>
+                                Steps List
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcanany
+
         {{-- Contacts --}}
         @canany(['Contacts'])
             <li>

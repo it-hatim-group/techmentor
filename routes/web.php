@@ -12,6 +12,7 @@ use App\Http\Controllers\MenteeController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProcessStepController;
 use Illuminate\Support\Facades\Route;
 
 // Public route
@@ -42,6 +43,9 @@ Route::middleware('auth')->group(function () {
     // Organization
     Route::get('/organizations', [OrganizationController::class, 'index'])->middleware('permission:Organizations')->name('organization.index');
     Route::delete('/organizations/{id}', [OrganizationController::class, 'destroy'])->name('organizations.destroy');
+
+    // Process Steps
+    Route::resource('process-steps', ProcessStepController::class)->middleware('permission:Steps')->names('processSteps');
 
     // Contact Controller 
     Route::get('/contacts', [ContactController::class, 'index'])->middleware('permission:Contacts')->name('contact.index');
